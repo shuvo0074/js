@@ -11,3 +11,9 @@ module.exports = log; //This is when we export only a function of the object
 console.log("--" + exports)
 console.log("--" + require)
 console.log("--" + module)
+
+//node built in modules https://nodejs.org/en/docs/
+
+const path = require('path')
+var pathObj = path.parse(__filename)
+console.log(pathObj)
