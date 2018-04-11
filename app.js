@@ -8,3 +8,8 @@ const logger = require('./logger') // We save the imported module inside a const
 
 logger('any message') //This is when we import only a function of the object
 //logger.log('a message') //This is when we import the whole objectas a module
+//Deep inside module
+console.log("--**" + exports)
+console.log("--**" + require)
+console.log("--**" + module)
+//Learn more about exports, require,module

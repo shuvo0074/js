@@ -7,3 +7,7 @@ function log(message) {
 }
 //module.exports.log = log; //This is when we export the whole object
 module.exports = log; //This is when we export only a function of the object
+//Deep inside module
+console.log("--" + exports)
+console.log("--" + require)
+console.log("--" + module)
