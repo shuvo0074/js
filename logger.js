@@ -1,19 +1,22 @@
 var url = 'http://abcd.com\log'
 //export const adrs = url;
 
-function log(message) {
-    //Send an http request
-    console.log(message)
-}
-//module.exports.log = log; //This is when we export the whole object
-module.exports = log; //This is when we export only a function of the object
-//Deep inside module
-console.log("--" + exports)
-console.log("--" + require)
-console.log("--" + module)
+const EventEmitter = require('events')
 
-//node built in modules https://nodejs.org/en/docs/
+class Logger extends EventEmitter{
+
+    log(message) {
+        //Send an http request
+        console.log(message)
+        this.emit('logging',{id : 1234, url: 'qwerty.com'})
+    }
+}
+
+//module.exports.log = log; //This is when we export the whole object
+
+//node built-in modules https://nodejs.org/en/docs/
 
 const path = require('path')
 var pathObj = path.parse(__filename)
-console.log(pathObj)
+console.log("Path object in logger " + pathObj)
+module.exports = Logger; //This is when we export only a function of the object
