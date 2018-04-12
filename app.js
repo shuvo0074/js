@@ -59,3 +59,24 @@ logger.on('logging',(arg) => {
 logger.log("Logger message")
 // study event more
 
+// http module
+const http = require('http')
+const server = http.createServer((req,res) =>{
+    //console.log('New connection')
+    if (req.url =='/'){
+        res.write('Hello World')
+        res.end()
+    }
+    if (req.url == '/array'){
+        res.write(JSON.stringify([1,2,3]))
+        res.end
+    }
+
+})
+
+/*
+server.on('connection', (socket) =>{
+    
+})*/
+server.listen(3000)
+console.log('listening on port 3000...')
