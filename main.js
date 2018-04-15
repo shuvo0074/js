@@ -1,4 +1,6 @@
+const newLocal = "The most unnecessary button is clicked";
 function runCode(){
-    console.log("The most unnecessary button is clicked")
+    document.write("Hello world")
+    console.log(newLocal)
     alert("Clicked")
 }
